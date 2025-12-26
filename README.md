@@ -72,22 +72,9 @@ AWS Bedrock is designed for **real business workloads**, not just demos.
 
 ## 🏗 Architecture Overview
 
-User Input
-↓
-Conversation History (Manual Memory)
-↓
-Prompt Construction
-↓
-AWS Bedrock Runtime API
-↓
-Amazon Titan Text
-↓
-Model Response
-↓
-History Update 
+![arch](images/architecture.png)
 
-
-📌 **Important:**  
+**Important:**  
 The entire conversation history is sent **on every request**.
 
 ## 🧠 Core Design Decisions
@@ -105,7 +92,6 @@ This makes the system:
 - Auditable
 - Easy to debug
 
----
 
 ### 2️⃣ Role-Based Prompt Formatting
 Conversation is formatted as:
@@ -121,7 +107,7 @@ This significantly improves response quality and consistency.
 We configure:
 ```json
 "stopSequences": ["User:"]
-
+```
 
 This prevents the model from hallucinating the next user message.
 
@@ -133,17 +119,15 @@ Explicit assistant cue
 
 Token limits
 
-These are production-first decisions, not demo shortcuts.
-
 How to Run the Project
+
+Clone the Github repo [AWS Bedrock Chatbot(Titan)](https://github.com/isaacotengdev/Amazon_Bedrock_Chatbot)
 Prerequisites
-
 Python 3.9+
-
 AWS credentials configured
-
 AWS Bedrock access enabled
 
+```code
 Install Dependencies
 pip install boto3
 
@@ -152,3 +136,13 @@ python chatbot.py
 
 
 Type exit to quit
+```
+You can also experiment with other models available on the AWS Bedrock service page.
+
+On the AWS Bedrock service page **Click on Model Catalog** . Here you have access to other model providers like Meta, Anthropic, Mistral AI etc. You can search for different models from different or same providers.
+
+![model Catalog](images/model_catalog.png)
+
+**Click on a Model, read it's documentation to understand how to use it in your project and copy the model's ID** 
+
+![modelId](images/modelId.png)
