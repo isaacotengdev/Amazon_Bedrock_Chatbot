@@ -123,9 +123,8 @@ How to Run the Project
 
 Clone the Github repo [AWS Bedrock Chatbot(Titan)](https://github.com/isaacotengdev/Amazon_Bedrock_Chatbot)
 Prerequisites
-Python 3.9+
-AWS credentials configured
-AWS Bedrock access enabled
+1. Python 3.9+
+2. AWS credentials configured
 
 ```code
 Install Dependencies
